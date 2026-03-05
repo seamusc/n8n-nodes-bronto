@@ -1,6 +1,6 @@
 {
 	"name": "@brontoio/n8n-nodes-bronto",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "n8n community node for Bronto.io log management API",
 	"license": "MIT",
 	"homepage": "",
@@ -15,9 +15,9 @@
 		"type": "git",
 		"url": "https://github.com/<...>/n8n-nodes-bronto.git"
 	},
-  "publishConfig": {
-    "access": "public"
-  },
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build": "n8n-node build",
 		"build:watch": "tsc --watch",
