@@ -1,6 +1,6 @@
 {
 	"name": "@brontoio/n8n-nodes-bronto",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "n8n community node for Bronto.io log management API",
 	"license": "MIT",
 	"homepage": "",
