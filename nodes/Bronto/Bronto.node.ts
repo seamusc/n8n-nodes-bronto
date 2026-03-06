@@ -272,18 +272,18 @@ export class Bronto implements INodeType {
 
 					if (events.length > 0) {
 						for (const event of events) {
-							returnData.push({ json: event });
+							returnData.push({ json: event, pairedItem: { item: i } });
 						}
 					} else if (groupsResult.length > 0) {
 						for (const group of groupsResult) {
-							returnData.push({ json: group });
+							returnData.push({ json: group, pairedItem: { item: i } });
 						}
 					} else if (result.length > 0) {
 						for (const item of result) {
-							returnData.push({ json: item });
+							returnData.push({ json: item, pairedItem: { item: i } });
 						}
 					} else {
-						returnData.push({ json: response as IDataObject });
+						returnData.push({ json: response as IDataObject, pairedItem: { item: i } });
 					}
 
 					const nextPageUrl = response?.pagination?.next_page_url as string | undefined;
@@ -296,7 +296,7 @@ export class Bronto implements INodeType {
 			} while (true);
 			} catch (error) {
 				if (this.continueOnFail()) {
-					returnData.push({ json: { error: (error as Error).message } });
+					returnData.push({ json: { error: (error as Error).message }, pairedItem: { item: i } });
 					continue;
 				}
 				throw new NodeApiError(this.getNode(), error as JsonObject);
